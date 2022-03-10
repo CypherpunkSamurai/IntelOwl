@@ -112,5 +112,29 @@
         "description": "Enable SSL certificate server verification. Change this if your YETI instance has not SSL enabled."
       }
     }
+  },
+  "MALTEGO": {
+    "disabled": true,
+    "description": "find or create transform on MALTEGO, using data from successful analysis on IntelOwl.",
+    "python_module": "maltego.MALTEGOTRX",
+    "maximum_tlp": "WHITE",
+    "config": {
+      "soft_time_limit": 30,
+      "queue": "default"
+    },
+    "secrets": {
+      "api_key_name": {
+        "env_var_key": "TRXURL",
+        "description": "TRX Server URL",
+        "required": true
+      }
+    },
+    "params": {
+      "verify_ssl": {
+        "value": true,
+        "type": "bool",
+        "description": "Enable SSL certificate server verification. Change this if your YETI instance has not SSL enabled."
+      }
+    }
   }
 }
